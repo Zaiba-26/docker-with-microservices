@@ -27,7 +27,7 @@ services:
     employee-service:
     image: empImg
     ports:
-      - "9991:8084"
+      - "9992:8084"
     environment:
       - DB_URL=jdbc:mysql://mysqldb:3306/mysql 
       - DB_USERNAME=root
