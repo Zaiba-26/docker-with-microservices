@@ -1,0 +1,47 @@
+#spring:
+#  application:
+#    name: department-service
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#  h2:
+#    console:
+#      enabled: true
+#  datasource:
+#      url: jdbc:h2:mem:testdb
+#
+#server:
+#  port: 8085
+
+#spring:
+#  application:
+#    name: department-service
+#  config:
+#    import: optional:configserver:http://localhost:8888
+#    
+#server:
+#  port: 8085
+
+erver:
+  port: 8084
+
+spring:
+  application:
+    name: employee-service
+
+  datasource:
+#    url: jdbc:mysql://localhost:3306/mydb?useSSL=false&serverTimezone=UTC
+#    username: root
+#    password: root
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # options are none, update, create, create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect  # Update the dialect to MySQL8Dialect
